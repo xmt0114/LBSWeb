@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <title>Baidu Map</title>
+    <style type="text/css">
+    html{height: 100%}
+    body{height: 100%;margin: 0px;padding: 0px}
+    #container{height: 100%}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=AXMXApRzQGeGz5qPaqe6h5UXoOVGWw9g">
+    </script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/javascript">
+    var map = new BMap.Map("container", {enableMapClick:false});
+    //var map = new BMap.Map("container");
+    var point = new BMap.Point(116.404, 39.915);
+    map.centerAndZoom(point, 15);
+    map.enableScrollWheelZoom();
+
+    function showInfo(thisMarker, e) {
+        var sContent =
+                '<form method="POST" action="/upload" enctype="multipart/form-data">'+
+                '<fieldset><legend>添加标记</legend>'+
+                '名称: <input name="info" type="text" /><br>'+
+				'备注: <input name="info" type="text" />'+
+					'<input type="submit" value="提交" />'+
+						'</fieldset></form>';
+            var infoWindow = new BMap.InfoWindow(sContent);
+            thisMarker.openInfoWindow(infoWindow); 
+    }
+
+    var marker = new BMap.Marker(point);
+    marker.addEventListener("click", function(e){
+        var sContent =
+                '<form method="POST" action="/upload" enctype="multipart/form-data">'+
+                '<fieldset><legend>添加标记</legend>'+
+                '名称: <input name="info" type="text" /><br>'+
+				'备注: <input name="info" type="text" />'+
+					'<input type="submit" value="提交" />'+
+						'</fieldset></form>';
+            var infoWindow = new BMap.InfoWindow(sContent);
+            this.openInfoWindow(infoWindow); 
+    });
+    map.addOverlay(marker);
+    /*map.addEventListener("mousemove", function(e){
+        //marker.removeEventListener("click", showInfo)
+        map.removeOverlay(marker)
+
+        var p = new BMap.Point(e.point.lng, e.point.lat);
+        marker = new BMap.Marker(p);
+        //marker.addEventListener("click", showInfo);
+        map.addOverlay(marker);
+    })
+
+    map.addEventListener("click", function(e){
+        marker.addEventListener("click", showInfo);
+        map.removeEventListener("mousemove")
+        map.removeEventListener("click");
+    })*/
+    </script>
+</body>
+</html>
