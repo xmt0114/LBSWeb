@@ -1,36 +1,147 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>LBSWeb7</title>
-	<link href="/assets/css/jqueryui.css" rel="stylesheet" type="text/css" />
-	<link href="/assets/css/vjpublic.css" rel="stylesheet" type="text/css" />
-	<link href="/assets/css/vjpage.css" rel="stylesheet" type="text/css" />
-	<link href="/assets/css/config.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="/assets/js/public.js"></script>
-	<script type="text/javascript" src="/assets/js/jquery-1.10.2.js"></script>
-	<script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>LBSWeb7</title>
+  <link href="/assets/css/jqueryui.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vjpublic.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vjpage.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/config.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="/assets/js/public.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GgTWX2MuIll9srISos0Ywrrec3T84xX8"></script>
 </head>
 <body data-curpagename="page1" class="body_style1">
 <div id="page1_jPanel1" class="Panel Panel_Null">
-	<div id="page1_jLabel1" class="text">LBSWeb房屋信息系统</div>
-	<div class="MenuH MenuH_style1" id="page1_jMenuH1">
-		<ul>
-			<li><a href="#"><span>修改密码</span></a></li>
-			<li><a href="#"><span>重新登录</span></a></li>
-			<li class="last"><a href="#"><span>退出</span></a></li>
-		</ul>
-	</div></div>
+  <div id="page1_jLabel1" class="text">LBSWeb房屋信息系统</div>
+  <div class="MenuH MenuH_style8" id="page1_jMenuH1">
+    <ul>
+      <li><a href="#"><span>修改密码</span></a></li>
+      <li class="last"><a href="#"><span>退出</span></a></li>
+    </ul>
+  </div></div>
 <div id="page1_jPanel3" class="Panel Panel_Null">
-	<div id="page1_jToolbar1_search" class="TJToolbar">
-		<div id="page1_jLabel2" class="text">搜索:</div>
-		<input type="text" class="Edit Edit_style1" value="" id="page1_jEdit1_search"/>
-		<div id="page1_jButton1" class="vjbutton vjbutton_c_style1 border_radius_8"><div class="vjbutton_txtR">添加标记点</div></div></div></div>
+  <div id="page1_jToolbar1_search" class="TJToolbar">
+    <div id="page1_jLabel2" class="text">搜索:</div>
+    <input type="text" class="Edit Edit_style1" value="" id="page1_jEdit1_search"/>
+    <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+    <div id="page1_jButton1" class="vjbutton vjbutton_c_style1 border_radius_8"><div class="vjbutton_txtR">添加标记点</div></div></div></div>
 <div id="page1_jPanel2" class="Panel Panel_Null">
-	<div id="page1_jExtPanel1" class="Panelbar Panelbar_grain Panelbar_TT14"><div class="PanelBarCaptionbox colorp_grain2" ><div class="PanelBarCaption border_grain01"><span>标注列表</span></div></div><div class="PanelContent colorp_grain5 ">
-	</div></div></div>
+  <div id="page1_jExtPanel1" class="Panelbar Panelbar_grain Panelbar_TT14"><div class="PanelBarCaptionbox colorp_grain2" ><div class="PanelBarCaption border_grain01"><span>标注列表</span></div></div><div class="PanelContent colorp_grain5 ">
+  </div></div></div>
 <div id="page1_jPanel4_map" class="Panel Panel_Null">
 </div>
 
 </body>
 </html>
+<script type="text/javascript">
+  // 百度地图API功能
+  map = new BMap.Map("page1_jPanel4_map");
+  map.centerAndZoom(new BMap.Point(116.417854,39.921988), 15);
+  //***************************添加城市控件
+  map.enableScrollWheelZoom();
+  map.enableInertialDragging();
+
+  map.enableContinuousZoom();
+
+  var size = new BMap.Size(10, 20);
+  map.addControl(new BMap.CityListControl({
+    anchor: BMAP_ANCHOR_TOP_LEFT,
+    offset: size,
+    // 切换城市之间事件
+    // onChangeBefore: function(){
+    //    alert('before');
+    // },
+    // 切换城市之后事件
+    // onChangeAfter:function(){
+    //   alert('after');
+    // }
+  }));
+  //*******************************添加标注点和信息窗口
+  var data_info = [[116.417854,39.921988,"地址：北京市东城区王府井大街88号乐天银泰百货八层"],
+    [116.406605,39.921585,"地址：北京市东城区东华门大街"],
+    [116.412222,39.912345,"地址：北京市东城区正义路甲5号"]
+  ];
+  var opts = {
+    width : 250,     // 信息窗口宽度
+    height: 80,     // 信息窗口高度
+    title : "信息窗口" , // 信息窗口标题
+    enableMessage:true//设置允许信息窗发送短息
+  };
+  var removeMarker = function(e,ee,marker){
+    map.removeOverlay(marker);
+  }  //创建右键菜单
+
+  for(var i=0;i<data_info.length;i++){
+    var markerMenu=new BMap.ContextMenu();
+    markerMenu.addItem(new BMap.MenuItem('删除',removeMarker.bind(marker)));//创建右键菜单
+
+    var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注
+    var content = data_info[i][2];
+    map.addOverlay(marker);               // 将标注添加到地图中
+    addClickHandler(content,marker);
+
+    marker.addContextMenu(markerMenu);//创建右键菜单
+  }
+  //************************************搜索框
+  function G(id) {
+    return document.getElementById(id);
+  }
+  var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+    {"input" : "page1_jEdit1_search"
+      ,"location" : map
+    });
+
+  ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+    var str = "";
+    var _value = e.fromitem.value;
+    var value = "";
+    if (e.fromitem.index > -1) {
+      value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+    }
+    str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+    value = "";
+    if (e.toitem.index > -1) {
+      _value = e.toitem.value;
+      value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+    }
+    str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+    G("searchResultPanel").innerHTML = str;
+  });
+
+  var myValue;
+  ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+    var _value = e.item.value;
+    myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+    G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+
+    setPlace();
+  });
+
+  function setPlace(){
+    map.clearOverlays();    //清除地图上所有覆盖物
+    function myFun(){
+      var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+      map.centerAndZoom(pp, 18);
+      map.addOverlay(new BMap.Marker(pp));    //添加标注
+    }
+    var local = new BMap.LocalSearch(map, { //智能搜索
+      onSearchComplete: myFun
+    });
+    local.search(myValue);
+  }
+  function addClickHandler(content,marker){
+    marker.addEventListener("click",function(e){
+      openInfo(content,e)}
+    );
+  }
+  function openInfo(content,e){
+    var p = e.target;
+    var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+    var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象
+    map.openInfoWindow(infoWindow,point); //开启信息窗口
+  }
+
+</script>

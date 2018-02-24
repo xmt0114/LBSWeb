@@ -10,7 +10,7 @@
 
 #page1_jPanel3{
   right: 0px;
-  top: 118px;
+  top: 115px;
   height: 4%;
   width: 85%;
 }
@@ -25,12 +25,8 @@
 #page1_jMenuH1{
   right: 0px;
   top: 0px;
-  width: 306px;
+  width: 200px;
   z-index: 3;
-}
-
-#page1_jMenuH1 ul{
-  height: 36px;
 }
 
 #page1_jLabel1{
@@ -93,5 +89,246 @@
   top: 0px;
   bottom: 0px;
   right: 0px;
+}
+
+#page2_jPanel1{
+  top: 171px;
+  height: 325px;
+  width: 407px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#page2_jExtPanel1{
+  left: 15px;
+  top: 14px;
+  height:296px;
+  width:377px;
+}
+
+#page2_jExtPanel1 .PanelBarCaption{
+}
+
+#page2_jExtPanel1 .PanelContent{
+}
+
+#page2_jExtPanel1 .cumicon{
+  background:url(../images/) no-repeat;
+  width:16px;
+  height:16px;
+  margin: 2px 5px 0 2px;
+}
+
+#page2_jHtmlForm1_form{
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  width: 376px;
+  height: 266px;
+}
+
+#page2_jPanel2{
+  left: 0px;
+  top: 0px;
+  height: 87px;
+  width: 378px;
+  background: url(../images/jLogin002.jpg) repeat-x;
+}
+
+#page2_jLabel1{
+  left: 32px;
+  top: 103px;
+  line-height: 14px;
+}
+
+#page2_jEdit1_name{
+  left: 85px;
+  top: 101px;
+  width:254px;
+  height:14px;
+}
+
+#page2_jLabel2{
+  left: 33px;
+  top: 135px;
+  line-height: 14px;
+}
+
+#page2_jEdit2_pw{
+  left: 85px;
+  top: 133px;
+  width:254px;
+  height:14px;
+}
+
+#page2_jEdit3_code{
+  left: 85px;
+  top: 165px;
+  width:156px;
+  height:14px;
+}
+
+#page2_jButton1_login{
+  left: 113px;
+  top: 230px;
+  width:79px;
+  height:20px;
+}
+
+#page2_jButton2_reset{
+  left: 206px;
+  top: 230px;
+  width:79px;
+  height:20px;
+}
+
+#page2_jLink1_another{
+  left: 85px;
+  top: 201px;
+}
+
+#page2_jLabel3{
+  left: 33px;
+  top: 168px;
+  line-height: 14px;
+}
+
+#page2_jImages1{
+  left: 253px;
+  top: 158px;
+  height: 36px;
+  width: 90px;
+}
+
+#page2_jLabel4{
+  left: 9px;
+  top: 10px;
+  font-size: 24px;
+  font-family: "隶书";
+  color: #800000;
+  line-height: 26px;
+}
+
+#page3_jPanel1{
+  left: 0px;
+  top: 311px;
+  height: 309px;
+  width: 100%;
+}
+
+#page3_jPanel3{
+  top: 130px;
+  height: 10px;
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background: #1670a5;
+}
+
+#page3_jPanel2{
+  top: -9px;
+  height: 100%;
+  width: 662px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#page3_jHtmlForm1_form{
+  position:absolute;
+  left: 328px;
+  top: 28px;
+  width: 303px;
+  height: 174px;
+}
+
+#page3_jLabel1{
+  left: 49px;
+  top: 7px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+#page3_jEdit1_name{
+  left: 119px;
+  top: 6px;
+  width:160px;
+  height:14px;
+}
+
+#page3_jLabel2{
+  left: 50px;
+  top: 41px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+#page3_jEdit2_pw{
+  left: 119px;
+  top: 38px;
+  width:161px;
+  height:14px;
+}
+
+#page3_jCheckBox1_remember{
+  left: 120px;
+  top: 66px;
+}
+
+#page3_jButton1_login{
+  left: 117px;
+  top: 134px;
+  width:79px;
+  height:20px;
+}
+
+#page3_jButton2_quit{
+  left: 207px;
+  top: 134px;
+  width:79px;
+  height:20px;
+}
+
+#page3_jImages1{
+  left: 33px;
+  top: 32px;
+  height: 51px;
+  width: 51px;
+}
+
+#page3_jLabel4{
+  left: 91px;
+  top: 31px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #335566;
+  line-height: 26px;
+}
+
+#page3_jLabel3{
+  left: 91px;
+  top: 61px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555555;
+  line-height: 20px;
+}
+
+#page3_jLabel5{
+  left: 140px;
+  top: 142px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f0f0f0;
+  line-height: 26px;
+}
+
+#page3_jLabel6{
+  left: 246px;
+  top: 156px;
+  color: #EEEEEE;
+  line-height: 14px;
 }
 
