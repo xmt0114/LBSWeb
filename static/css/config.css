@@ -1,0 +1,97 @@
+﻿body{font-size:12px;}
+
+#page1_jPanel1{
+  left: 0px;
+  top: 0px;
+  height: 15%;
+  right: 0px;
+  background: #0099CC;
+}
+
+#page1_jPanel3{
+  right: 0px;
+  top: 118px;
+  height: 4%;
+  width: 85%;
+}
+
+#page1_jPanel2{
+  left: 0px;
+  bottom: 0px;
+  height: 85%;
+  width: 15%;
+}
+
+#page1_jMenuH1{
+  right: 0px;
+  top: 0px;
+  width: 306px;
+  z-index: 3;
+}
+
+#page1_jMenuH1 ul{
+  height: 36px;
+}
+
+#page1_jLabel1{
+  left: 17px;
+  top: 25px;
+  font-size: 36px;
+  line-height: 38px;
+}
+
+#page1_jPanel4_map{
+  right: 0px;
+  bottom: 0px;
+  height: 81%;
+  width: 85%;
+}
+
+#page1_jLabel2{
+  left: 13px;
+  top: 9px;
+  line-height: 14px;
+}
+
+#page1_jEdit1_search{
+  left: 66px;
+  top: 7px;
+  width:144px;
+  height:14px;
+}
+
+#page1_jButton1{
+  left: 342px;
+  top: 5px;
+  width:90px;
+  height:20px;
+}
+
+#page1_jExtPanel1{
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+#page1_jExtPanel1 .PanelBarCaption{
+}
+
+#page1_jExtPanel1 .PanelContent{
+  overflow:auto;
+}
+
+#page1_jExtPanel1 .cumicon{
+  background:url(../images/) no-repeat;
+  right: 0px;
+  bottom: 0px;
+  margin: 2px 5px 0 2px;
+}
+
+#page1_jToolbar1_search{
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
