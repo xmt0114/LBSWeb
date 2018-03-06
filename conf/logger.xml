@@ -1,0 +1,11 @@
+<seelog minlevel="debug">
+	<outputs formatid="common">
+		<rollingfile type="size" filename="./log/server.log" maxsize="1000000" maxrolls="5"/>
+		<filter levels="error,critical">
+			<rollingfile type="size" filename="./log/error.log" maxsize="1000000" maxrolls="5"/>
+		</filter>
+	</outputs>
+	<formats>
+		<format id="common" format="[%LEVEL] [%Date %Time] [%RelFile:%Line] - %Msg%n" />
+	</formats>
+</seelog>

@@ -15,6 +15,12 @@ func NewUserManager() *UserManager {
 	return &UserManager{Users:make(map[string]string)}
 }
 
+func init()  {
+	// for test init users
+	//TODO: load user db
+	userMgr.Users["root"] = "root"
+}
+
 func (mgr *UserManager) CheckUser(name string, passwd string) bool {
 	if name == "" || passwd == "" {
 		return false

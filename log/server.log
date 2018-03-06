@@ -1,0 +1,12 @@
+[INFO] [2018-03-04 18:41:02] [user_mgr.go:15] - LBSWeb init
+[DEBUG] [2018-03-04 18:41:02] [main.go:78] - Loading template: E:/code/go/src/LBSWeb/views/index.html
+[DEBUG] [2018-03-04 18:41:02] [main.go:78] - Loading template: E:/code/go/src/LBSWeb/views/login.html
+[DEBUG] [2018-03-04 18:41:02] [main.go:78] - Loading template: E:/code/go/src/LBSWeb/views/map.html
+[DEBUG] [2018-03-04 18:41:02] [main.go:78] - Loading template: E:/code/go/src/LBSWeb/views/test.html
+[INFO] [2018-03-04 18:41:02] [D:/Go/src/net/http/server.go:2145] - LBSWeb main
+[INFO] [2018-03-04 19:25:10] [user_mgr.go:15] - LBSWeb init
+[DEBUG] [2018-03-04 19:25:10] [util.go:32] - Loading template: E:/code/go/src/LBSWeb/views/index.html
+[DEBUG] [2018-03-04 19:25:10] [util.go:32] - Loading template: E:/code/go/src/LBSWeb/views/login.html
+[DEBUG] [2018-03-04 19:25:10] [util.go:32] - Loading template: E:/code/go/src/LBSWeb/views/map.html
+[DEBUG] [2018-03-04 19:25:10] [util.go:32] - Loading template: E:/code/go/src/LBSWeb/views/test.html
+[INFO] [2018-03-04 19:25:10] [D:/Go/src/net/http/server.go:2145] - LBSWeb start
